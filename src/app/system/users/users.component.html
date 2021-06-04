@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12 grid-margin">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <h4 class="font-weight-bold mb-0">List Users</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <!-- Table -->
+          <table aria-label="table-user" class="table table-hover" mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="name">
+              <th id="name" mat-header-cell *matHeaderCellDef>Name</th>
+              <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+              <th id="email" mat-header-cell *matHeaderCellDef>Email</th>
+              <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+            </ng-container>
+            <ng-container matColumnDef="phone">
+              <th id="phone" mat-header-cell *matHeaderCellDef>Phone</th>
+              <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+          <!-- Paging -->
+          <mat-paginator
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons
+          ></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

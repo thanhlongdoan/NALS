@@ -1,0 +1,104 @@
+<div class="container-scroller">
+  <!-- partial:partials/_navbar.html -->
+  <nav aria-label="navbar" class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div
+      class="
+        text-center
+        navbar-brand-wrapper
+        d-flex
+        align-items-center
+        justify-content-center
+      "
+    >
+      <a class="navbar-brand brand-logo mr-5" href="http://localhost:4200/home"
+        ><img
+          src="../../../assets/images/nal-logo_150.png"
+          class="mr-2"
+          alt="logo"
+      /></a>
+      <a class="navbar-brand brand-logo-mini" href="http://localhost:4200/home"
+        ><img src="../../../assets/images/logo-mini.svg" alt="logo"
+      /></a>
+    </div>
+    <div
+      class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
+    >
+      <button
+        class="navbar-toggler navbar-toggler align-self-center"
+        type="button"
+        data-toggle="minimize"
+      >
+        <span class="ti-view-list"></span>
+      </button>
+      <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item nav-profile dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            id="profileDropdown"
+          >
+            <img src="../../../assets/images/avt.jpg" alt="profile" />
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right navbar-dropdown"
+            aria-labelledby="profileDropdown"
+          >
+            <a class="dropdown-item" (click)="logout()">
+              <em class="ti-power-off text-primary"></em>
+              Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+      <button
+        class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+        type="button"
+        data-toggle="offcanvas"
+      >
+        <span class="ti-view-list"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav aria-label="sidebar" class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/home">
+            <em class="ti-user menu-icon"></em>
+            <span class="menu-title">Users</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <app-users></app-users>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer">
+        <div
+          class="d-sm-flex justify-content-center justify-content-sm-between"
+        >
+          <span
+            class="
+              text-muted
+              d-block
+              text-center text-sm-left
+              d-sm-inline-block
+            "
+            >Copyright © DOAN THANH LONG 2021</span
+          >
+        </div>
+      </footer>
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+
+<router-outlet></router-outlet>
